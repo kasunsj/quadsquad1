@@ -26,27 +26,24 @@ public class StudentManager {
     private Element getStudentElement(Integer id) {
         for (Element el : (List<Element>) XMLManager.getXML().getDocument().getRootElement().getChild("studentTable").getChildren("student")) 
             if (id.toString().equals(el.getAttributeValue("sid"))) 
-return el;return null;
+            	return el;
+        return null;
                 }
                 private IStudent createStudent(Integer id) {
                     IStudent is;
-        Element el = getStudentElement(id);
-        if (el != null) {
-            StudentUnitRecordList rlist = StudentUnitRecordManager.instance().getRecordsByStudent(id);
+                    Element el = getStudentElement(id);
+                    if (el != null) {
+                    	StudentUnitRecordList rlist = StudentUnitRecordManager.instance().getRecordsByStudent(id);
     is = new Student(new Integer(el.getAttributeValue("sid")),el.getAttributeValue("fname"),el.getAttributeValue("lname"),rlist);
 
     
-    sm.put(is.getID(), is);
-        return is; }
-throw new RuntimeException("DBMD: createStudent : student not in file");}
+    	sm.put(is.getID(), is);
+        return is; 
+        }
+        throw new RuntimeException("DBMD: createStudent : student not in file");}
     private IStudent createStudentProxy(Integer id) {
         Element el = getStudentElement(id);
-        
-        
-        
-        
-        
-        
+
         if (el != null) return new StudentProxy(id, el.getAttributeValue("fname"), el.getAttributeValue("lname"));
         throw new RuntimeException("DBMD: createStudent : student not in file");}
 
