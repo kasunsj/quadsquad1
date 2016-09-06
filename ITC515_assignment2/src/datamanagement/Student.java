@@ -16,7 +16,7 @@ public class Student implements IStudent
     }
     public Integer getID() { return this.id; 
 } 
-public String getFirstName() 
+    public String getFirstName() 
 	{ 
 		return fn; 
 	}
@@ -35,7 +35,7 @@ public String getFirstName()
     public void addUnitRecord( IStudentUnitRecord record ) { 
     	su.add(record); 
     	}
-        public IStudentUnitRecord getUnitRecord( String unitCode ) {
+    public IStudentUnitRecord getUnitRecord( String unitCode ) {
         	for ( IStudentUnitRecord r : su ) 
             if ( r.getUnitCode().equals(unitCode)) 
             	return r; 
