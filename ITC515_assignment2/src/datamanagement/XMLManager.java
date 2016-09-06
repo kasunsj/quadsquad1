@@ -1,4 +1,5 @@
 package datamanagement;
+// it is managing xml
 
 import org.jdom.Document;
 import org.jdom.input.SAXBuilder;
