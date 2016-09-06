@@ -22,23 +22,28 @@ public String getFirstName()
 	}
 
     public void setFirstName( String firstName ) { 
-this.fn = firstName; }
+    	this.fn = firstName; 
+    	}
 
-public String getLastName() { 
-    return ln; }
+    public String getLastName() { 
+    	return ln; 
+    	}
     public void setLastName( String lastName ) { 
+    	this.ln = lastName; 
+    	}
 
-        
-this.ln = lastName; }
-
-public void addUnitRecord( IStudentUnitRecord record ) { su.add(record); }
+    public void addUnitRecord( IStudentUnitRecord record ) { 
+    	su.add(record); 
+    	}
         public IStudentUnitRecord getUnitRecord( String unitCode ) {
-for ( IStudentUnitRecord r : su ) 
+        	for ( IStudentUnitRecord r : su ) 
             if ( r.getUnitCode().equals(unitCode)) 
-return r; 
+            	return r; 
 
-return null;
-        
-}
+        	return null;
+        }
 
-public StudentUnitRecordList getUnitRecords() { return su; }}
+        public StudentUnitRecordList getUnitRecords() { 
+        	return su; 
+        	}
+        }
