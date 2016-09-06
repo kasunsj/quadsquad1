@@ -27,7 +27,7 @@ public class StudentManager {
 		IStudent is = sm.get(id);
 		return is != null ? is : createStudent(id);
 	}
-
+// getting student elements from database using XML
 	private Element getStudentElement(Integer id) {
 		for (Element el : (List<Element>) XMLManager.getXML().getDocument()
 				.getRootElement().getChild("studentTable")
