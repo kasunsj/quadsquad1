@@ -13,7 +13,7 @@ public class StudentManager {
         if (self == null) //if self is eaqual to null
             self = new StudentManager(); return self; 
             }
-    
+    //StudentManager method
     private StudentManager() {
     	sm = new StudentMap();
         um = new java.util.HashMap<>();
