@@ -1,27 +1,29 @@
 package datamanagement;
-
+//student manager class
+//import statement
 import org.jdom.*;
 import java.util.List;
 public class StudentManager {
-    private static StudentManager self = null;
+    private static StudentManager self = null; //creating a constant
 
+    //creating private variables
+    private StudentMap sm;
+    private java.util.HashMap<String, StudentMap> um;
+    public static StudentManager get() {
+        if (self == null) //if self is eaqual to null
+            self = new StudentManager(); return self; 
+            }
     
-    private StudentMap sm;private java.util.HashMap<String, StudentMap> um;
-public static StudentManager get() {
-        if (self == null) 
-            
-self = new StudentManager(); return self; }
-private StudentManager() {
-
-    
-            sm = new StudentMap();
-        um = new java.util.HashMap<>();}
-        public IStudent getStudent(Integer id) {
-IStudent is = sm.get(id);
-    return is != null ? is : createStudent(id);
+    private StudentManager() {
+    	sm = new StudentMap();
+        um = new java.util.HashMap<>();
+        }
+    public IStudent getStudent(Integer id) {
+        	IStudent is = sm.get(id);
+        	return is != null ? is : createStudent(id);
     }
 
-private Element getStudentElement(Integer id) {
+    private Element getStudentElement(Integer id) {
         for (Element el : (List<Element>) XMLManager.getXML().getDocument().getRootElement().getChild("studentTable").getChildren("student")) 
             if (id.toString().equals(el.getAttributeValue("sid"))) 
 return el;return null;
