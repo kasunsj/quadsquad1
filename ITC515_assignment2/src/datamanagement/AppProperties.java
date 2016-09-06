@@ -1,6 +1,6 @@
 package datamanagement; // it is the main folder where all over files exists
 import java.util.*; // importing util package from java 
-import java.io.*;
+import java.io.*; //importing io package of java
 
 public class AppProperties 
 {
