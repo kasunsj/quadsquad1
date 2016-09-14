@@ -9,7 +9,6 @@ public class StudentManager {
 	private StudentMap sm;
 	private java.util.HashMap<String, StudentMap> um;
 
-	// used hashmap for mapping StudentMap class
 	public static StudentManager get() {
 		if (self == null)
 
@@ -27,7 +26,7 @@ public class StudentManager {
 		IStudent is = sm.get(id);
 		return is != null ? is : createStudent(id);
 	}
-// getting student elements from database using XML
+
 	private Element getStudentElement(Integer id) {
 		for (Element el : (List<Element>) XMLManager.getXML().getDocument()
 				.getRootElement().getChild("studentTable")
